@@ -5,7 +5,7 @@ int main ()
 {
 	
 	for (int x=1; x<=100; x++ )
-	 	if (x % 3 == 0)
+	 	if (x % 3 == 0 && x % 5 == 0 )
 		{
 			cout << "Pogi \n" ;
 		}
@@ -15,7 +15,7 @@ int main ()
 			cout << "Ed \n" ;
 		}
 		
-	 	 else if (x % 3 == 0 && x % 5 == 0 )
+	 	 else if (x % 3 == 0)
 		{
 			cout << "Ed Pogi \n" ;
 		}
