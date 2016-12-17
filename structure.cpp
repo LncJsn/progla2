@@ -7,16 +7,16 @@ struct Person {
 	int head;	
 };
 int main(){
-	Person Person;
+	Person person;
 	
-	cin>>Person.toes;
-	cin>>Person.knees;
-	cin>>Person.shoulder;
-	cin>>Person.head;
+	cin>>person.toes;
+	cin>>person.knees;
+	cin>>person.shoulder;
+	cin>>person.head;
 	
-	cout<<Person.toes;
-	cout<<Person.knees;
-	cout<<Person.shoulder;
-	cout<<Person.head;
+	cout<<person.toes;
+	cout<<person.knees;
+	cout<<person.shoulder;
+	cout<<person.head;
 	return 0;
 }
