@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 
-
 struct Person
 {
 	int toes;
@@ -11,24 +10,22 @@ struct Person
 };
  int main()
  {
-	 Person person;
-	 cout << "Person's toes:" << endl;
-	 cin >> person.toes;
-	 cout << "Person's knees:" << endl;
-	 cin >> person.knees;
-	 cout << "Person's shoulder:" << endl;
-	 cin >> person.shoulder;
-	 cout << "Person's head:" << endl;
-	 cin >> person.head;
-	 
-	 cout << person.toes << endl;
-	 cout << person.knees << endl;
-	 cout << person.shoulder << endl;
-	 cout << person.head << endl;
-	 
-	 
-	 
-	 
-	 
+	 Person person[5];
+	 for (int i=0;i<5;i++)
+	 {
+	 	cin >> person[i].toes >> endl;
+	 	cin >> person[i].knees >> endl;
+	 	cin >> person[i].shoulder >> endl;
+	 	cin >> person[i].head >> endl;
+	 	
+	 }
+	  for (int i=0;i<5;i++)
+	 {
+	 	cout << person[i].toes >> endl;
+	 	cout << person[i].knees >> endl;
+	 	cout << person[i].shoulder >> endl;
+	 	cout << person[i].head >> endl;
+	 	
+	 }
 	 return 0;
- }
+}
