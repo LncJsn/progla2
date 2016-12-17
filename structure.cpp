@@ -8,5 +8,5 @@ struct Person
 	int knees;
 	int shoulder;
 	int head;
-}
+};
 
