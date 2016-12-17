@@ -11,19 +11,20 @@ struct Person
 };
  int main()
  {
+	 Person person;
 	 cout << "Person's toes:" << endl;
-	 cin >> Person.toes;
+	 cin >> person.toes;
 	 cout << "Person's knees:" << endl;
-	 cin >> Person.knees;
+	 cin >> person.knees;
 	 cout << "Person's shoulder:" << endl;
-	 cin >> Person.shoulder;
+	 cin >> person.shoulder;
 	 cout << "Person's head:" << endl;
-	 cin >> Person.head;
+	 cin >> person.head;
 	 
-	 cout << Person.toes << endl;
-	 cout << Person.knees << endl;
-	 cout << Person.shoulder << endl;
-	 cout << Person.head << endl;
+	 cout << person.toes << endl;
+	 cout << person.knees << endl;
+	 cout << person.shoulder << endl;
+	 cout << person.head << endl;
 	 
 	 
 	 
