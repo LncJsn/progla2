@@ -2,27 +2,20 @@
 #include <iostream>
 using namespace std;
 
-main(){
+int main(){
     FILE *myFile;
-    myFile = fopen("sample.txt", "r");
+    int numberArray[5];
 
-    //read file into array
-    int a;
-    int i;
-	    int numberArray[5];
-
-    for (i = 0; i < 5; i++){
-        fscanf(myFile, "%d", &numberArray[i]);
-    }
-
-    for (i = 0; i < 5; i++){
-        printf("Number is: %d\n\n", numberArray[i]);
-    }
-    
-     for (i = 0; i < 5; i++){
-        
-        
+    for(int i = 0 ; i < 5 ; i++){
+		cin >> numberArray[i];
 	}
-		cout << a ;
 
+    myFile = fopen("sample1.txt", "w");
+
+    for (int i = 4; i >= 0; i--){
+        fprintf(myFile, "%d\n", numberArray[i]);
+    }
+	fclose(myFile);
+
+	return 0;
 }
