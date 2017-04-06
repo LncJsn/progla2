@@ -1,0 +1,116 @@
+#include <iostream>
+#include <windows.h>
+
+ using namespace std;
+
+char answerBoard[4][4] = 
+	{{'4','6','3','5'},
+	 {'7','1','2','8'},
+	 {'3','6','4','1'},
+	 {'8','2','7','5'}};
+ 	
+char mainBoard[4][4] = 
+	{{'*','*','*','*'},
+	 {'*','*','*','*'},
+	 {'*','*','*','*'},
+	 {'*','*','*','*'}};
+	 
+int xFirstChoice,yFirstChoice,xSecondChoice,ySecondChoice,tries = 3;
+
+void ShowAnswerBoard(){	
+	cout << "MEMORY GAME\n\n";
+	cout << "Tries Left: " << tries << endl << endl;
+	cout << "   0 1 2 3\n";
+	 for(int row=0 ; row<4 ; row++){
+	 	cout << row << "-|";
+	 	for(int col=0 ; col<4 ; col++){
+	 		cout << answerBoard[row][col] << "|";
+		 }
+		cout << endl;
+	 }
+	cout << endl;
+}
+
+void ShowMainBoard(){
+	system("cls");
+	cout << "MEMORY GAME\n\n";
+	cout << "Tries Left: " << tries << endl << endl;
+	cout << "   0 1 2 3\n";
+	for(int row=0 ; row<4 ; row++){
+		cout << row << "-|";
+	 	for(int col=0 ; col<4 ; col++){
+	 		cout << mainBoard[row][col] << "|";
+		 }
+		cout << endl;
+	 }
+	cout << endl;
+}
+
+void UpdateMainBoard(int x, int y){
+	mainBoard[x][y] = answerBoard[x][y];
+}
+
+void checkIfPaired(){
+	if (answerBoard[xFirstChoice][yFirstChoice] != answerBoard[xSecondChoice][ySecondChoice] ){
+		tries--;
+		ShowMainBoard();
+		mainBoard[xFirstChoice][yFirstChoice] = '*';
+		mainBoard[xSecondChoice][ySecondChoice] = '*';
+		cout << "Wrong!\n";
+	}
+	else{
+		cout << "Correct!\n";
+	}
+	system("pause");
+}
+
+bool checkIfWin(){
+	bool status = true;
+	
+	for(int row=0 ; row<4 ; row++){
+	 	for(int col=0 ; col<4 ; col++){
+	 		if(mainBoard[row][col] == '*'){
+	 			status = false;
+			 }
+		}
+	}
+	
+	return status;
+}
+ int main(){
+	for(int i=5 ; i>0 ; i--){
+	 	ShowAnswerBoard();
+	 	cout << "Game will start in " << i << "..." << endl;
+	 	Sleep(1000);
+	 	system("cls");
+	}
+	 
+	do{
+		ShowMainBoard();
+		cout << "Enter x and y coordinate for first position.\nX:";
+	 	cin >> xFirstChoice;
+	 	cout << "Y:";
+	 	cin >> yFirstChoice;
+	 	
+	 	UpdateMainBoard(xFirstChoice,yFirstChoice);
+	 	ShowMainBoard();
+	 	
+		cout << "Enter x and y coordinate for second position.\nX:";
+	 	cin >> xSecondChoice;
+	 	cout << "Y:";
+	 	cin >> ySecondChoice;
+	 	
+	 	UpdateMainBoard(xSecondChoice,ySecondChoice);
+	 	ShowMainBoard();
+	 	
+	 	checkIfPaired();
+	 	ShowMainBoard();
+ 	}while(tries != 0 && !(checkIfWin()));
+ 	
+ 	if(tries != 0){
+ 		cout << "CONGRATULATIONS!!!";
+	 }
+	else{
+		cout << "YOU LOSE!!!";
+	}
+ }
